@@ -1,0 +1,51 @@
+{
+  "name": "motd-tool",
+  "version": "1.0.0",
+  "description": "Tiny CLI that prints a random message of the day in your terminal.",
+  "license": "MIT",
+  "author": "AlucPro",
+  "homepage": "https://github.com/AlucPro/motd-tool",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlucPro/motd-tool.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AlucPro/motd-tool/issues"
+  },
+  "keywords": [
+    "motd",
+    "cli",
+    "terminal",
+    "shell",
+    "inspiration"
+  ],
+  "type": "commonjs",
+  "packageManager": "pnpm@10.12.1",
+  "bin": {
+    "xmotd": "./bin/xmotd.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "scripts",
+    "Formula",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "check": "pnpm build && pnpm test",
+    "dev": "pnpm build --watch",
+    "postinstall": "node ./scripts/postinstall.js",
+    "prepack": "pnpm build",
+    "release:check": "pnpm check && node ./scripts/prepare-release.mjs",
+    "test": "pnpm build && node --test dist/test/**/*.test.js"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.8.2"
+  }
+}
