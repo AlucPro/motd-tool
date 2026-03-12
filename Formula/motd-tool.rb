@@ -1,8 +1,8 @@
 class MotdTool < Formula
   desc "Tiny CLI that prints a random message of the day in your terminal"
   homepage "https://github.com/AlucPro/motd-tool"
-  url "https://registry.npmjs.org/motd-tool/-/motd-tool-1.0.0.tgz"
-  sha256 "60cfee0adbd66fb383c9f00fcb7f6bf08fa7a9deb1171ea40bd0ff3c9d5c17b9"
+  url "https://registry.npmjs.org/motd-tool/-/motd-tool-1.0.1.tgz"
+  sha256 "3657c4e0c647991a71437a1dd9ad5bec3e13d3becfa0a3fce2705c089b59460b"
   license "MIT"
 
   depends_on "node"
