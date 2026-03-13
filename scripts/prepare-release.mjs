@@ -17,7 +17,10 @@ if (!fs.existsSync(tarballPath)) {
 
 const sha256 = crypto.createHash("sha256").update(fs.readFileSync(tarballPath)).digest("hex");
 const formula = fs.readFileSync(formulaPath, "utf8")
-  .replace(/motd-tool-\d+\.\d+\.\d+\.tgz/, `motd-tool-${version}.tgz`)
+  .replace(
+    /https:\/\/github\.com\/AlucPro\/motd-tool\/releases\/download\/v\d+\.\d+\.\d+\/motd-tool-\d+\.\d+\.\d+\.tgz|https:\/\/registry\.npmjs\.org\/motd-tool\/-\/motd-tool-\d+\.\d+\.\d+\.tgz/,
+    `https://github.com/AlucPro/motd-tool/releases/download/v${version}/motd-tool-${version}.tgz`
+  )
   .replace(/sha256 "[^"]+"/, `sha256 "${sha256}"`);
 
 fs.writeFileSync(formulaPath, formula, "utf8");

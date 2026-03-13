@@ -48,6 +48,8 @@ Install from Homebrew:
 brew install AlucPro/tap/motd-tool
 ```
 
+The Homebrew formula downloads the release tarball from GitHub Releases.
+
 For local development, this repository uses `pnpm` and TypeScript:
 
 ```bash
@@ -165,6 +167,7 @@ When the tag lands on GitHub, the `Release` workflow will:
 - build and test the project
 - publish `motd-tool` to npm with `NPM_TOKEN`
 - rebuild the Homebrew formula with the new npm tarball SHA
+- point the Homebrew formula at the matching GitHub Release asset
 - push `Formula/motd-tool.rb` to `AlucPro/homebrew-tap` with `HOMEBREW_TAP_TOKEN`
 - create a GitHub Release with the packaged tarball
 
